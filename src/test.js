@@ -12,16 +12,6 @@ configViewEngine(app);
 //Khai bao router
 app.use('/v1', WebRoutes);
 
-
-
-//simple query
-connection.query(
-  'SELECT * FROM Users',
-  function (err, results, fields){
-    console.log(">>> results= ", results);
-  }
-);
-
 app.listen(port, () =>   {
   console.log(`Example app listening on port ${port}`)
 }) 
