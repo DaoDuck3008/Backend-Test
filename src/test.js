@@ -4,8 +4,10 @@ const configViewEngine = require('./config/viewEngine.js');
 const WebRoutes = require('./routes/web.js');
 const app = express()
 const port = process.env.PORT || 8080;
-const connection = require('./config/database.js');
 
+//config req.body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 //config
 configViewEngine(app);
 
