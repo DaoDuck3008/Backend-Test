@@ -9,22 +9,22 @@ const getABC = (req,res) => {
     res.render('sample.ejs');
 }
 
-const addUser = (req,res) => {
+const addUser = async (req,res) => {
     const {email, name, city} = req.body;
+    const [result, field] = await connection.query(
+        ` INSERT INTO Users (email, name, city) VALUES (?, ?, ?)`,[email,name,city]);
+    
+    console.log(">>> result: ", result);
+    res.send("Created new user!");
+}
 
-    connection.query(
-       ` INSERT INTO Users (email, name, city) VALUES (?, ?, ?)`,
-        [email,name,city],
-        function(err, results){
-            res.send('Created user succeed');
-            console.log(`>>> email: ${email}, name: ${name}, city: ${city}`);
-        }
-
-    )
+const getCreatePage = (req,res) => {
+    res.render('createUser.ejs');
 }
 
 module.exports = {
     getHomePage,
     getABC,
-    addUser
+    addUser,
+    getCreatePage
 };

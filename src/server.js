@@ -12,7 +12,7 @@ app.use(express.json());
 configViewEngine(app);
 
 //Khai bao router
-app.use('/v1', WebRoutes);
+app.use('', WebRoutes);
 
 app.listen(port, () =>   {
   console.log(`Example app listening on port ${port}`)

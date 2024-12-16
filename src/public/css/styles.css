@@ -27,7 +27,7 @@ ul {
   }
   
   /* Change the link color to #111 (black) on hover */
-  li a:hover {
+  .active{
     background-color: green;
   }
 
@@ -35,5 +35,9 @@ ul {
     margin: 0 auto;
     padding: 20px;
     width: 500px;
+  }
+
+  fieldset {
+    padding: 10px;
   }
 
