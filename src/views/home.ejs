@@ -51,6 +51,10 @@
                     <td><%= user.name %></td>
                     <td><%= user.email %></td>
                     <td><%= user.city %></td>
+                    <td>
+                        <a href="/updateUser/<%= user.id %>">Edit</a>
+                        <button>Delete</button>
+                    </td>
                 </tr>
             <% }); %>
           </table>
